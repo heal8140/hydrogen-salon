@@ -6,155 +6,310 @@
 
 <title>水素サロンheal｜お知らせ・サービス案内｜神楽坂の水素吸入サロン</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&display=swap" rel="stylesheet">
+<meta name="theme-color" content="#008f52">
+
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
 
 <style>
+
 html, body {
   font-family: 'Noto Sans JP', sans-serif;
-  line-height: 1.6;
-  background-color: #f8f8f8;
-  padding: 20px 15px;
+  line-height: 1.9;
+  background:
+    linear-gradient(to bottom, #f7faf8 0%, #f3f5f4 100%);
+  padding: 24px 16px 60px;
   color: #333;
-  max-width: 760px;
+  max-width: 860px;
   margin: 0 auto;
   font-size: 15px;
+  letter-spacing: 0.02em;
 }
 
+/* フェード */
+
+.fade {
+  animation: fadeIn 0.8s ease;
+}
+
+@keyframes fadeIn {
+
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+
+}
+
+/* メインタイトル */
+
 .main-title {
-  font-size: 2.2em;
+  font-size: 2.6em;
   color: #008f52;
   text-align: center;
-  margin-bottom: 0.3em;
+  margin-top: 20px;
+  margin-bottom: 40px;
+  font-weight: 700;
+  line-height: 1.3;
+  position: relative;
+}
+
+.main-title::after {
+  content: "";
+  width: 70px;
+  height: 3px;
+  background: linear-gradient(to right, #008f52, #7bc7a4);
+  display: block;
+  margin: 18px auto 0;
+  border-radius: 999px;
 }
 
 .subtitle {
   display: block;
-  font-size: 0.6em;
-  color: #666;
+  font-size: 0.42em;
+  color: #777;
+  margin-top: 8px;
+  letter-spacing: 0.15em;
+  font-weight: 400;
 }
+
+/* セクションタイトル */
 
 .section-title {
-  background-color: #008f52;
-  color: #fff;
+  position: relative;
+  background: transparent;
+  color: #008f52;
   text-align: center;
-  padding: 12px;
-  font-size: 1.5em;
-  font-weight: bold;
-  border-radius: 8px;
-  margin-top: 30px;
-  margin-bottom: 15px;
+  padding: 0;
+  font-size: 1.8em;
+  font-weight: 700;
+  margin-top: 65px;
+  margin-bottom: 30px;
+  letter-spacing: 0.08em;
 }
 
-.section {
-  background-color: #fff;
-  border-radius: 8px;
-  padding: 15px;
-  margin-bottom: 15px;
-  border-left: 5px solid #008f52;
-  box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+.section-title::after {
+  content: "";
+  width: 60px;
+  height: 2px;
+  background: #008f52;
+  display: block;
+  margin: 14px auto 0;
+  opacity: 0.4;
 }
+
+/* カード */
+
+.section {
+  background: rgba(255,255,255,0.96);
+  border-radius: 20px;
+  padding: 28px;
+  margin-bottom: 24px;
+  border: 1px solid rgba(0,0,0,0.04);
+  box-shadow:
+    0 10px 30px rgba(0,0,0,0.04),
+    0 2px 10px rgba(0,0,0,0.03);
+  backdrop-filter: blur(6px);
+  transition: 0.25s ease;
+}
+
+.section:hover {
+  transform: translateY(-2px);
+  box-shadow:
+    0 18px 40px rgba(0,0,0,0.06),
+    0 5px 15px rgba(0,0,0,0.04);
+}
+
+/* h2 */
 
 h2 {
   color: #008f52;
-  margin: 10px 0;
-  font-size: 1.2em;
+  margin-top: 0;
+  margin-bottom: 16px;
+  font-size: 1.35em;
+  font-weight: 700;
+  line-height: 1.5;
+  padding-left: 14px;
+  border-left: 4px solid #008f52;
 }
 
+/* h3 */
+
 h3 {
-  margin: 12px 0 6px;
+  margin: 22px 0 10px;
   font-size: 1.05em;
+  font-weight: 700;
+  color: #444;
+}
+
+/* テキスト */
+
+p {
+  margin-bottom: 10px;
+  color: #444;
 }
 
 ul {
-  margin: 5px 0;
-  padding-left: 1.2em;
+  margin: 12px 0;
+  padding-left: 1.4em;
 }
 
 li {
-  margin-bottom: 4px;
+  margin-bottom: 8px;
 }
 
-p {
-  margin-bottom: 4px;
-}
+/* リンク */
 
 a {
   color: #008f52;
   text-decoration: none;
+  font-weight: 700;
+  transition: 0.2s ease;
 }
 
 a:hover {
-  text-decoration: underline;
+  opacity: 0.7;
 }
 
+/* グループ */
+
 .group {
-  margin-bottom: 12px;
+  margin-bottom: 20px;
+  padding: 18px;
+  border-radius: 14px;
+  background: #f7faf8;
 }
+
+/* 強調 */
+
+strong {
+  color: #008f52;
+}
+
+/* スマホ */
+
+@media screen and (max-width: 768px) {
+
+  html, body {
+    padding: 18px 14px 50px;
+    font-size: 14px;
+  }
+
+  .main-title {
+    font-size: 2em;
+    margin-bottom: 30px;
+  }
+
+  .section {
+    padding: 22px;
+    border-radius: 18px;
+  }
+
+  .section-title {
+    font-size: 1.5em;
+    margin-top: 50px;
+  }
+
+  h2 {
+    font-size: 1.2em;
+  }
+
+}
+
 </style>
 </head>
 
-<body>
+<body class="fade">
 
 <h1 class="main-title">
-水素サロンheal <span class="subtitle">～水素専門店～</span>
+水素サロンheal
+<span class="subtitle">～水素専門店～</span>
 </h1>
 
 <div class="section-title">お知らせ</div>
 
 <div class="section">
+
 <h2>🎉オープン2周年のご挨拶🎉</h2>
+
 <p>いつもご利用いただき、ありがとうございます😊</p>
+
 <p>皆さまのおかげで水素サロン healは、5/15に無事にオープン2周年を迎えることができます✨</p>
+
 <p>この一年、たくさんのお客様とのご縁に支えられ、笑顔あふれる毎日を過ごすことができました🌿</p>
+
 <p>日頃の感謝を込めて「2周年イベント」を開催いたします💐</p>
+
 <p>これからも、みなさまにとって癒しと元気をお届けできるサロンであり続けられるよう、スタッフ一同ますます頑張ってまいります💪💚</p>
+
 <p>今後ともどうぞよろしくお願いいたします🍀</p>
+
 <p>🫧水素サロン heal スタッフ一同🫧</p>
+
 </div>
-  
+
 <div class="section">
- <h2>🌿2周年キャンペーンのお知らせ🌿</h2>
 
-  <p>
-    おかげさまで、レプトンサロンヒールは5月15日に2周年を迎えます。<br>
-    日頃の感謝を込めて、期間限定の記念キャンペーンを実施いたします。
-  </p>
+<h2>🌿2周年キャンペーンのお知らせ🌿</h2>
 
-  <p>
-    📅《期間》5月1日(金)～18日(月)<br>
-    🎁《対象》すべてのお客様（期間中は何度でもご利用いただけます）
-  </p>
+<p>
+おかげさまで、レプトンサロンヒールは5月15日に2周年を迎えます。<br>
+日頃の感謝を込めて、期間限定の記念キャンペーンを実施いたします。
+</p>
 
-  <p><strong>【20%OFFキャンペーン】</strong><br>
-  
-    ①追加G60分<br>通常¥6,400 → ¥5,120</p>
-    <p>②レプトンガス＋ゴッドクリーナー60分<br>特別価格 ¥5,500</p>
-    <p>③Gを追加された方限定<br>ラドンマットを無料でご利用いただけます</p>
+<p>
+📅《期間》5月1日(金)～18日(月)<br>
+🎁《対象》すべてのお客様（期間中は何度でもご利用いただけます）
+</p>
 
-  <p><strong>【ご利用にあたって】</strong></br>
-  
-    ・期間中は混雑が予想されるため、事前のご予約をおすすめしております。<br>
-        ・当日は状況により、ご案内が難しい場合がございます。<br>
-    ・①は定額プランをご利用中の方のみ対象となります。<br>
-    ・②は定額プランとの併用はいたしかねます。<br>
-    ・キャンペーンは期間中、何度でもご利用いただけます。</p>
+<p>
+<strong>【20%OFFキャンペーン】</strong>
+</p>
 
-  <p>
-    これからも「ふっと帰ってこられる場所」として、
-    皆さまに心地よい時間をご提供できるよう努めてまいります。
-      皆さまのご来店を心よりお待ちしております。
-  </p>
-  <p>
-    ご不明点などございましたら、お気軽にお問い合わせくださいませ。
-  </p>
+<p>①追加G60分<br>通常¥6,400 → ¥5,120</p>
+
+<p>②レプトンガス＋ゴッドクリーナー60分<br>特別価格 ¥5,500</p>
+
+<p>③Gを追加された方限定<br>ラドンマットを無料でご利用いただけます</p>
+
+<p>
+<strong>【ご利用にあたって】</strong>
+</p>
+
+<p>
+・期間中は混雑が予想されるため、事前のご予約をおすすめしております。<br>
+・当日は状況により、ご案内が難しい場合がございます。<br>
+・①は定額プランをご利用中の方のみ対象となります。<br>
+・②は定額プランとの併用はいたしかねます。<br>
+・キャンペーンは期間中、何度でもご利用いただけます。
+</p>
+
+<p>
+これからも「ふっと帰ってこられる場所」として、
+皆さまに心地よい時間をご提供できるよう努めてまいります。
+皆さまのご来店を心よりお待ちしております。
+</p>
+
+<p>
+ご不明点などございましたら、お気軽にお問い合わせくださいませ。
+</p>
+
 </div>
-  
+
 <div class="section">
+
 <h2>10P特典内容変更</h2>
+
 <p>平素より当サロンをご愛顧いただき、誠にありがとうございます。</p>
+
 <p>2026年4月より内容を一部変更させていただくこととなりました。</p>
 
 <p>【新10P特典内容】</p>
+
 <ul>
 <li>10P:L30分無料追加</li>
 <li>20P:G30分無料追加</li>
@@ -162,36 +317,57 @@ a:hover {
 </ul>
 
 <p>※詳細は各種サービスのポイント特典の利用可能条件をご確認ください。</p>
+
 </div>
 
 <div class="section-title">各種サービス</div>
 
 <div class="section">
+
 <h2>ポイント特典の利用可能条件</h2>
+
 <p><strong>来店ポイントが10P,20P,30P</strong>貯まると、利用可能となる特典が御座います。</p>
+
 <p>10P:L30分無料追加</p>
 <p>20P:G30分無料追加</p>
 <p>30P:L&G60分無料追加</p>
+
 <p><strong>※30Pのみ単体利用が可能です</strong></p>
+
 <p>※単品または施術の追加をされたお客様につきましては<strong>自動でポイント付与</strong>されます🎁</p>
+
 <p>※ポイント使用後は使用したポイント分は消失いたします。</p>
+
 </div>
 
 <div class="section">
+
 <h2>その他特典</h2>
+
 <p>【紹介特典：L30分が1回無料】</p>
+
 <p>紹介者が一度でも来店した事があり、紹介された方が来店された場合に適用可能となります。</p>
+
 <p>ご紹介者・紹介された方の両方にL30分無料</p>
+
 <p>【誕生月特典：L30分が1回無料】</p>
+
 <p>お誕生日月はL30分が1回無料</p>
+
 <p>※いずれも特典のみでの使用はできかねます。</p>
+
 </div>
 
 <div class="section">
+
 <h2>New Scanについて</h2>
+
 <p>NewScanは外部の講師をお招きして水素と同時並行して行う施術となります。</p>
+
 <p>その為、単体での施術はできかねます。</p>
+
 <p>また、通常のキャンセルポリシーとは<strong>異なるキャンセルポリシー</strong>を設けております為、ご注意ください。</p>
+
 <p>以下、キャンセルポリシーとなります。</p>
 
 <ul>
@@ -201,51 +377,79 @@ a:hover {
 </ul>
 
 <p>【ご予約受付時間帯】</p>
+
 <p>①10:00~　②11:30~</p>
 <p>③13:30~　④15:00~</p>
 <p>⑤16:30~　⑥18:00~</p>
 <p>⑦19:30~</p>
 
 <p>【開催日程】</p>
+
 <p>5月：10日(日)　26日(火)</p>
 <p>6月：20日(土)　30日(火)</p>
 <p>7月：12日(日)（13:00～）　28日(火)</p>
 <p>8月：25日(火)</p>
 <p>9月：13日(日)　29日(火)</p>
-<p>10月：11日(日)　27日(火)
-<p>11月：15日(日)　17日(火)
-<p>12月：19日(土)　22日(火)
+<p>10月：11日(日)　27日(火)</p>
+<p>11月：15日(日)　17日(火)</p>
+<p>12月：19日(土)　22日(火)</p>
+
 <p>※日程は予告無く変更となる場合がございます。</p>
+
 </div>
 
 <div class="section-title">注意事項</div>
 
 <div class="section">
+
 <h2>🌀 カニューラの交換・破棄について</h2>
+
 <p>カニューラはお客様専用ですが、衛生管理上以下のルールがございます。</p>
+
 <ul>
 <li>初回使用から<strong>3ヶ月経過</strong>で交換推奨</li>
 <li><strong>4ヶ月経過で破棄・再購入</strong></li>
 </ul>
+
 </div>
 
 <div class="section">
+
 <h2>ホットペッパービューティーからの予約について</h2>
-<p>ホットペッパービューティーからご予約いただく際、他のお客様から公式LINEにて同時刻のご予約が入った場合、タイミングによってはご<strong>予約時間が重複</strong>してしまうことがございます。
+
+<p>
+ホットペッパービューティーからご予約いただく際、他のお客様から公式LINEにて同時刻のご予約が入った場合、タイミングによってはご予約時間が重複してしまうことがございます。
+</p>
+
+<p>
 その際、システムの都合上、<strong>LINEでのご予約が優先</strong>となり、ホットペッパービューティーからのご予約が確定していない場合がございます。
+</p>
+
+<p>
 また、ホットペッパービューティーでは予約完了メールが自動送信されるため、お客様ご自身では予約が確定していないことに気づきにくいケースがございます。
-このような行き違いを防ぐためにも、確実にご案内させていただく手段として、公式LINEからのご予約をおすすめしております。</p>
+</p>
+
+<p>
+このような行き違いを防ぐためにも、確実にご案内させていただく手段として、公式LINEからのご予約をおすすめしております。
+</p>
+
 </div>
 
 <div class="section">
+
 <h2>❌ キャンセルポリシー</h2>
-<p>ご連絡はLINEまたはお電話にてお願いいたします📞<br>
-👉 <a href="tel:0359468140">03-5946-8140</a></p>
+
+<p>
+ご連絡はLINEまたはお電話にてお願いいたします📞<br>
+👉 <a href="tel:0359468140">03-5946-8140</a>
+</p>
 
 <h3>⏰ 遅刻について</h3>
+
 <p>30分以上の遅刻は無断キャンセル扱いとなる場合がございます。</p>
 
 <h3>💸 キャンセル料金</h3>
+
 <ul>
 <li><strong>2時間前まで：無料</strong></li>
 <li><strong>2時間前〜：50％</strong></li>
@@ -253,38 +457,71 @@ a:hover {
 </ul>
 
 <p>※NewScanは異なるキャンセルポリシーの為、各種サービス内のNewScanをご参照ください。</p>
+
 </div>
 
 <div class="section-title">吸い放題&マンスリー各種書類</div>
 
 <div class="section">
-<p>本書は「吸い放題プラン」「吸い放題プラス」「吸い放題プレミア」を含む、各種吸い放題プラン共通のご利用規約兼同意書です。</p>
-<p>なお、本書の内容と事前にご案内した個別の契約内容（書面・控え・電子データ等）に差異が生じた場合は、当該個別の契約内容を優先するものとします。</p>
-<p>個別のプラン内容（利用時間・料金・特典等）につきましては、別途ご案内内容をご確認ください。</p>
+
+<p>
+本書は「吸い放題プラン」「吸い放題プラス」「吸い放題プレミア」を含む、各種吸い放題プラン共通のご利用規約兼同意書です。
+</p>
+
+<p>
+なお、本書の内容と事前にご案内した個別の契約内容（書面・控え・電子データ等）に差異が生じた場合は、当該個別の契約内容を優先するものとします。
+</p>
+
+<p>
+個別のプラン内容（利用時間・料金・特典等）につきましては、別途ご案内内容をご確認ください。
+</p>
 
 <h2>同意書</h2>
+
+<div class="group">
+
 <p>吸い放題：<a href="吸い放題各種 ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>マンスリー2：<a href="L&Gマンスリー2ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>マンスリー3：<a href="L&Gマンスリー3ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>マンスリー4：<a href="L&Gマンスリー4ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+
+</div>
 
 <h2>解約申請書</h2>
 
-<p>解約申請を行う場合は、以下のPDFをダウンロードのうえ、必要事項をご記入いただき当店へご提出ください。</p>
-<p>なお、ダウンロードが難しい場合は、LINEでの送付または店頭にて用紙をお渡しすることも可能です。</p>
+<p>
+解約申請を行う場合は、以下のPDFをダウンロードのうえ、必要事項をご記入いただき当店へご提出ください。
+</p>
+
+<p>
+なお、ダウンロードが難しい場合は、LINEでの送付または店頭にて用紙をお渡しすることも可能です。
+</p>
 
 <div class="group">
+
 <p>吸い放題プラン：<a href="吸い放題プラン解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>吸い放題プラス：<a href="吸い放題プラス解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>吸い放題プレミア：<a href="吸い放題プレミア解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>記入例：<a href="吸い放題解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
+
 </div>
 
 <div class="group">
+
 <p>マンスリー2：<a href="マンスリー2プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>マンスリー3：<a href="マンスリー3プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>マンスリー4：<a href="マンスリー4プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+
 <p>記入例：<a href="マンスリープラン 解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
+
 </div>
 
 </div>
@@ -292,13 +529,24 @@ a:hover {
 <div class="section-title">サロン情報</div>
 
 <div class="section">
+
 <h2>神楽坂本店</h2>
+
 <p>アクセス：東京都 新宿区 天神町 17番地</p>
+
 <p>神楽坂駅徒歩2分</p>
+
 <p>営業時間：平日10:00~21:00</p>
+
 <p>　　　　　土日祝10:00~19:00</p>
+
 <p>　　　　　不定休</p>
-<p>電話番号：<a href="tel:0359468140">03-5946-8140</a></p>
+
+<p>
+電話番号：
+<a href="tel:0359468140">03-5946-8140</a>
+</p>
+
 </div>
 
 </body>
