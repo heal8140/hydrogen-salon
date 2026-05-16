@@ -6,37 +6,45 @@
 
 <title>水素サロンheal｜お知らせ・サービス案内｜神楽坂の水素吸入サロン</title>
 
-<meta name="theme-color" content="#2f5d50">
+<meta name="theme-color" content="#008f52">
 
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
 <style>
 
-html, body{
-  margin:0;
-  padding:0;
-  background:#f5f5f2;
-  color:#3d3d3d;
-  font-family:'Noto Sans JP',sans-serif;
-  line-height:2;
-  letter-spacing:.03em;
-  font-size:15px;
+/* =========================
+   base
+========================= */
+
+html{
+  scroll-behavior:smooth;
 }
 
 body{
-  padding:40px 22px 80px;
-  max-width:980px;
-  margin:0 auto;
-  animation:fadeIn 1s ease;
+  margin:0;
+  padding:0;
+  background:
+    radial-gradient(circle at top, #ffffff 0%, #f7f8f7 45%, #f2f3f2 100%);
+  color:#3f3f3f;
+  font-family:'Noto Sans JP',sans-serif;
+  line-height:2.05;
+  letter-spacing:.04em;
+  font-size:15px;
+  -webkit-font-smoothing:antialiased;
 }
 
-/* フェード */
+.container{
+  max-width:980px;
+  margin:0 auto;
+  padding:38px 20px 80px;
+  animation:fadeIn 1s ease;
+}
 
 @keyframes fadeIn{
 
   from{
     opacity:0;
-    transform:translateY(10px);
+    transform:translateY(12px);
   }
 
   to{
@@ -46,161 +54,264 @@ body{
 
 }
 
-/* メインタイトル */
+/* =========================
+   title
+========================= */
 
 .main-title{
   text-align:center;
-  color:#2f5d50;
-  font-size:2.8em;
+  color:#008f52;
+  font-size:3em;
   font-weight:700;
-  line-height:1.4;
-  margin-top:20px;
-  margin-bottom:70px;
-  letter-spacing:.08em;
+  letter-spacing:.1em;
+  line-height:1.35;
+  margin-top:18px;
+  margin-bottom:80px;
+  position:relative;
 }
 
 .main-title::after{
   content:"";
-  width:60px;
-  height:1px;
-  background:#2f5d50;
+  width:72px;
+  height:2px;
+  background:linear-gradient(to right,#008f52,#65c79a);
   display:block;
-  margin:22px auto 0;
-  opacity:.5;
+  margin:24px auto 0;
+  border-radius:999px;
 }
 
 .subtitle{
   display:block;
   margin-top:10px;
-  font-size:.38em;
-  font-weight:400;
   color:#777;
-  letter-spacing:.18em;
+  font-size:.34em;
+  letter-spacing:.28em;
+  font-weight:300;
 }
 
-/* セクションタイトル */
+/* =========================
+   section title
+========================= */
 
 .section-title{
+  position:relative;
   text-align:center;
-  color:#2f5d50;
+  color:#008f52;
   font-size:1.7em;
   font-weight:700;
-  letter-spacing:.12em;
-  margin:90px 0 40px;
+  letter-spacing:.14em;
+  margin:95px 0 42px;
+}
+
+.section-title::before,
+.section-title::after{
+  content:"";
+  position:absolute;
+  top:50%;
+  width:70px;
+  height:1px;
+  background:#008f52;
+  opacity:.18;
+}
+
+.section-title::before{
+  left:50%;
+  margin-left:-150px;
 }
 
 .section-title::after{
-  content:"";
-  width:50px;
-  height:1px;
-  background:#2f5d50;
-  display:block;
-  margin:16px auto 0;
-  opacity:.45;
+  right:50%;
+  margin-right:-150px;
 }
 
-/* セクション */
+/* =========================
+   card
+========================= */
 
 .section{
-  background:#fcfcfa;
-  border:1px solid #e7ebe8;
-  border-radius:10px;
-  padding:38px;
-  margin-bottom:24px;
+  position:relative;
+  background:rgba(255,255,255,.92);
+  border:1px solid rgba(0,143,82,.08);
+  border-radius:18px;
+  padding:42px;
+  margin-bottom:26px;
+  overflow:hidden;
+
+  backdrop-filter:blur(10px);
+
+  box-shadow:
+    0 1px 1px rgba(0,0,0,.01),
+    0 8px 30px rgba(0,0,0,.03);
 }
 
-/* h2 */
+/* 上部アクセント */
+
+.section::before{
+  content:"";
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  height:3px;
+  background:linear-gradient(to right,#008f52,#7dd5ab);
+  opacity:.9;
+}
+
+/* hover */
+
+.section{
+  transition:
+    transform .35s ease,
+    box-shadow .35s ease,
+    border-color .35s ease;
+}
+
+.section:hover{
+  transform:translateY(-3px);
+
+  box-shadow:
+    0 18px 40px rgba(0,0,0,.05);
+
+  border-color:rgba(0,143,82,.18);
+}
+
+/* =========================
+   heading
+========================= */
 
 h2{
   margin-top:0;
-  margin-bottom:22px;
-  color:#2f5d50;
-  font-size:1.28em;
-  font-weight:700;
+  margin-bottom:24px;
+  color:#008f52;
+  font-size:1.32em;
   line-height:1.7;
+  font-weight:700;
+  letter-spacing:.05em;
 }
-
-/* h3 */
 
 h3{
-  margin-top:28px;
-  margin-bottom:10px;
-  color:#444;
-  font-size:1.05em;
+  margin-top:30px;
+  margin-bottom:12px;
+  color:#4a4a4a;
+  font-size:1.06em;
   font-weight:700;
 }
 
-/* テキスト */
+/* =========================
+   text
+========================= */
 
 p{
-  margin:0 0 14px;
+  margin:0 0 15px;
 }
 
 ul{
-  margin:10px 0 18px;
+  margin:14px 0 18px;
   padding-left:1.4em;
 }
 
 li{
-  margin-bottom:8px;
+  margin-bottom:10px;
 }
 
-/* リンク */
+/* =========================
+   link
+========================= */
 
 a{
-  color:#2f5d50;
+  color:#008f52;
   text-decoration:none;
-  transition:.2s ease;
+  position:relative;
+  transition:.25s ease;
   font-weight:500;
 }
 
-a:hover{
-  opacity:.65;
+a::after{
+  content:"";
+  position:absolute;
+  left:0;
+  bottom:-2px;
+  width:0;
+  height:1px;
+  background:#008f52;
+  transition:.25s ease;
 }
 
-/* 強調 */
+a:hover::after{
+  width:100%;
+}
+
+/* =========================
+   strong
+========================= */
 
 strong{
-  color:#2f5d50;
+  color:#008f52;
   font-weight:700;
 }
 
-/* グループ */
+/* =========================
+   group
+========================= */
 
 .group{
-  margin-top:18px;
-  margin-bottom:26px;
-  padding:22px;
-  background:#f7f8f6;
-  border-radius:8px;
-  border:1px solid #ecefed;
+  margin-top:22px;
+  margin-bottom:28px;
+  padding:24px;
+  border-radius:14px;
+
+  background:
+    linear-gradient(to bottom right,
+    rgba(0,143,82,.025),
+    rgba(0,143,82,.01));
+
+  border:1px solid rgba(0,143,82,.06);
 }
 
-/* スマホ */
+/* =========================
+   mobile
+========================= */
 
 @media screen and (max-width:768px){
 
   body{
-    padding:26px 16px 60px;
     font-size:14px;
   }
 
+  .container{
+    padding:26px 14px 60px;
+  }
+
   .main-title{
-    font-size:2em;
-    margin-bottom:55px;
+    font-size:2.1em;
+    margin-bottom:60px;
   }
 
   .section-title{
-    font-size:1.45em;
+    font-size:1.42em;
     margin:70px 0 30px;
   }
 
+  .section-title::before,
+  .section-title::after{
+    width:40px;
+  }
+
+  .section-title::before{
+    margin-left:-95px;
+  }
+
+  .section-title::after{
+    margin-right:-95px;
+  }
+
   .section{
-    padding:26px;
+    padding:28px 24px;
+    border-radius:16px;
   }
 
   h2{
-    font-size:1.15em;
+    font-size:1.18em;
   }
 
 }
@@ -209,6 +320,8 @@ strong{
 </head>
 
 <body>
+
+<div class="container">
 
 <h1 class="main-title">
 水素サロンheal
@@ -219,7 +332,7 @@ strong{
 
 <div class="section">
 
-<h2>オープン2周年のご挨拶</h2>
+<h2>🎉オープン2周年のご挨拶</h2>
 
 <p>いつもご利用いただき、ありがとうございます。</p>
 
@@ -239,7 +352,7 @@ strong{
 
 <div class="section">
 
-<h2>2周年キャンペーンのお知らせ</h2>
+<h2>🌿2周年キャンペーンのお知らせ</h2>
 
 <p>
 おかげさまで、レプトンサロンヒールは5月15日に2周年を迎えます。<br>
@@ -290,26 +403,6 @@ strong{
 
 </div>
 
-<div class="section">
-
-<h2>10P特典内容変更</h2>
-
-<p>平素より当サロンをご愛顧いただき、誠にありがとうございます。</p>
-
-<p>2026年4月より内容を一部変更させていただくこととなりました。</p>
-
-<p>【新10P特典内容】</p>
-
-<ul>
-<li>10P:L30分無料追加</li>
-<li>20P:G30分無料追加</li>
-<li>30P:L&G60分無料追加</li>
-</ul>
-
-<p>※詳細は各種サービスのポイント特典の利用可能条件をご確認ください。</p>
-
-</div>
-
 <div class="section-title">各種サービス</div>
 
 <div class="section">
@@ -348,174 +441,6 @@ strong{
 
 </div>
 
-<div class="section">
-
-<h2>New Scanについて</h2>
-
-<p>NewScanは外部の講師をお招きして水素と同時並行して行う施術となります。</p>
-
-<p>その為、単体での施術はできかねます。</p>
-
-<p>また、通常のキャンセルポリシーとは<strong>異なるキャンセルポリシー</strong>を設けております為、ご注意ください。</p>
-
-<p>以下、キャンセルポリシーとなります。</p>
-
-<ul>
-<li><strong>2日前まで：無料</strong></li>
-<li><strong>前日キャンセル：施術料の50％</strong></li>
-<li><strong>当日キャンセル：施術料の100％</strong></li>
-</ul>
-
-<p>【ご予約受付時間帯】</p>
-
-<p>①10:00~　②11:30~</p>
-<p>③13:30~　④15:00~</p>
-<p>⑤16:30~　⑥18:00~</p>
-<p>⑦19:30~</p>
-
-<p>【開催日程】</p>
-
-<p>5月：10日(日)　26日(火)</p>
-<p>6月：20日(土)　30日(火)</p>
-<p>7月：12日(日)（13:00～）　28日(火)</p>
-<p>8月：25日(火)</p>
-<p>9月：13日(日)　29日(火)</p>
-<p>10月：11日(日)　27日(火)</p>
-<p>11月：15日(日)　17日(火)</p>
-<p>12月：19日(土)　22日(火)</p>
-
-<p>※日程は予告無く変更となる場合がございます。</p>
-
-</div>
-
-<div class="section-title">注意事項</div>
-
-<div class="section">
-
-<h2>カニューラの交換・破棄について</h2>
-
-<p>カニューラはお客様専用ですが、衛生管理上以下のルールがございます。</p>
-
-<ul>
-<li>初回使用から<strong>3ヶ月経過</strong>で交換推奨</li>
-<li><strong>4ヶ月経過で破棄・再購入</strong></li>
-</ul>
-
-</div>
-
-<div class="section">
-
-<h2>ホットペッパービューティーからの予約について</h2>
-
-<p>
-ホットペッパービューティーからご予約いただく際、他のお客様から公式LINEにて同時刻のご予約が入った場合、タイミングによってはご予約時間が重複してしまうことがございます。
-</p>
-
-<p>
-その際、システムの都合上、<strong>LINEでのご予約が優先</strong>となり、ホットペッパービューティーからのご予約が確定していない場合がございます。
-</p>
-
-<p>
-また、ホットペッパービューティーでは予約完了メールが自動送信されるため、お客様ご自身では予約が確定していないことに気づきにくいケースがございます。
-</p>
-
-<p>
-このような行き違いを防ぐためにも、確実にご案内させていただく手段として、公式LINEからのご予約をおすすめしております。
-</p>
-
-</div>
-
-<div class="section">
-
-<h2>キャンセルポリシー</h2>
-
-<p>
-ご連絡はLINEまたはお電話にてお願いいたします。<br>
-<a href="tel:0359468140">03-5946-8140</a>
-</p>
-
-<h3>遅刻について</h3>
-
-<p>30分以上の遅刻は無断キャンセル扱いとなる場合がございます。</p>
-
-<h3>キャンセル料金</h3>
-
-<ul>
-<li><strong>2時間前まで：無料</strong></li>
-<li><strong>2時間前〜：50％</strong></li>
-<li><strong>予約時間以降：100％</strong></li>
-</ul>
-
-<p>※NewScanは異なるキャンセルポリシーの為、各種サービス内のNewScanをご参照ください。</p>
-
-</div>
-
-<div class="section-title">吸い放題&マンスリー各種書類</div>
-
-<div class="section">
-
-<p>
-本書は「吸い放題プラン」「吸い放題プラス」「吸い放題プレミア」を含む、各種吸い放題プラン共通のご利用規約兼同意書です。
-</p>
-
-<p>
-なお、本書の内容と事前にご案内した個別の契約内容（書面・控え・電子データ等）に差異が生じた場合は、当該個別の契約内容を優先するものとします。
-</p>
-
-<p>
-個別のプラン内容（利用時間・料金・特典等）につきましては、別途ご案内内容をご確認ください。
-</p>
-
-<h2>同意書</h2>
-
-<div class="group">
-
-<p>吸い放題：<a href="吸い放題各種 ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>マンスリー2：<a href="L&Gマンスリー2ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>マンスリー3：<a href="L&Gマンスリー3ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>マンスリー4：<a href="L&Gマンスリー4ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
-
-</div>
-
-<h2>解約申請書</h2>
-
-<p>
-解約申請を行う場合は、以下のPDFをダウンロードのうえ、必要事項をご記入いただき当店へご提出ください。
-</p>
-
-<p>
-なお、ダウンロードが難しい場合は、LINEでの送付または店頭にて用紙をお渡しすることも可能です。
-</p>
-
-<div class="group">
-
-<p>吸い放題プラン：<a href="吸い放題プラン解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>吸い放題プラス：<a href="吸い放題プラス解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>吸い放題プレミア：<a href="吸い放題プレミア解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>記入例：<a href="吸い放題解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
-
-</div>
-
-<div class="group">
-
-<p>マンスリー2：<a href="マンスリー2プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>マンスリー3：<a href="マンスリー3プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>マンスリー4：<a href="マンスリー4プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
-
-<p>記入例：<a href="マンスリープラン 解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
-
-</div>
-
-</div>
-
 <div class="section-title">サロン情報</div>
 
 <div class="section">
@@ -536,6 +461,8 @@ strong{
 電話番号：
 <a href="tel:0359468140">03-5946-8140</a>
 </p>
+
+</div>
 
 </div>
 
