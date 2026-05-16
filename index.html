@@ -1,874 +1,696 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-
-<meta charset="UTF-8" />
-<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-<title>
-水素サロンheal｜お知らせ・サービス案内｜神楽坂の水素吸入サロン
-</title>
-
-<meta name="theme-color" content="#008f52">
-
-<link
-  href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
-  rel="stylesheet"
-/>
-
-<style>
-
-/* =========================
-   Base
-========================= */
-
-:root{
-
-  --main:#008f52;
-  --main-light:#6ad3a6;
-
-  --text:#404040;
-
-  --bg:#f5f7f6;
-
-  --card:#ffffff;
-
-  --border:rgba(0,143,82,.08);
-
-}
-
-*{
-  box-sizing:border-box;
-}
-
-html{
-  scroll-behavior:smooth;
-}
-
-body{
-
-  margin:0;
-
-  background:
-    radial-gradient(
-      circle at top,
-      #ffffff 0%,
-      #f7f8f7 42%,
-      #f2f4f3 100%
-    );
-
-  color:var(--text);
-
-  font-family:'Noto Sans JP',sans-serif;
-
-  line-height:1.9;
-
-  letter-spacing:.04em;
-
-  font-size:15px;
-
-  -webkit-font-smoothing:antialiased;
-
-}
-
-/* =========================
-   Fade
-========================= */
-
-.fade{
-  animation:fadeIn 1s ease;
-}
-
-@keyframes fadeIn{
-
-  from{
-    opacity:0;
-    transform:translateY(12px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-/* =========================
-   Hero
-========================= */
-
-.hero{
-
-  position:relative;
-
-  width:100%;
-
-  min-height:440px;
-
-  display:flex;
-  align-items:center;
-  justify-content:center;
-
-  overflow:hidden;
-
-  padding:80px 20px;
-
-  background:
-    linear-gradient(
-      rgba(255,255,255,.72),
-      rgba(255,255,255,.86)
-    ),
-
-    url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop")
-    center/cover no-repeat;
-
-}
-
-.hero::before{
-
-  content:"";
-
-  position:absolute;
-  inset:0;
-
-  background:
-    radial-gradient(
-      circle at center,
-      rgba(255,255,255,.10),
-      transparent 70%
-    );
-
-  animation:floatBg 12s ease-in-out infinite;
-
-}
-
-@keyframes floatBg{
-
-  0%{
-    transform:scale(1);
-  }
-
-  50%{
-    transform:scale(1.04);
-  }
-
-  100%{
-    transform:scale(1);
-  }
-
-}
-
-.hero-inner{
-
-  position:relative;
-
-  z-index:2;
-
-  text-align:center;
-
-  max-width:760px;
-
-}
-
-.hero-sub{
-
-  margin-bottom:20px;
-
-  color:#008f52;
-
-  font-size:.88em;
-
-  letter-spacing:.35em;
-
-  font-weight:500;
-
-}
-
-.hero-title{
-
-  margin:0;
-
-  color:#008f52;
-
-  font-family:'Zen Old Mincho',serif;
-
-  font-size:4.2em;
-
-  font-weight:700;
-
-  line-height:1.35;
-
-  letter-spacing:.08em;
-
-}
-
-.hero-title::after{
-
-  content:"";
-
-  width:78px;
-  height:2px;
-
-  background:
-    linear-gradient(
-      to right,
-      #008f52,
-      #6ad3a6
-    );
-
-  display:block;
-
-  margin:28px auto 0;
-
-  border-radius:999px;
-
-}
-
-.hero-text{
-
-  margin-top:28px;
-
-  font-size:1.03em;
-
-  color:#555;
-
-  line-height:2.1;
-
-}
-
-/* =========================
-   Layout
-========================= */
-
-.container{
-
-  max-width:980px;
-
-  margin:0 auto;
-
-  padding:36px 20px 90px;
-
-}
-
-/* =========================
-   Section Title
-========================= */
-
-.section-title{
-
-  position:relative;
-
-  text-align:center;
-
-  margin:48px 0 26px;
-
-  color:var(--main);
-
-  font-size:1.75em;
-
-  font-family:'Zen Old Mincho',serif;
-
-  font-weight:700;
-
-  letter-spacing:.14em;
-
-}
-
-.section-title::before,
-.section-title::after{
-
-  content:"";
-
-  position:absolute;
-
-  top:50%;
-
-  width:80px;
-  height:1px;
-
-  background:var(--main);
-
-  opacity:.16;
-
-}
-
-.section-title::before{
-
-  left:50%;
-
-  margin-left:-170px;
-
-}
-
-.section-title::after{
-
-  right:50%;
-
-  margin-right:-170px;
-
-}
-
-/* =========================
-   Card
-========================= */
-
-.section{
-
-  position:relative;
-
-  background:
-    linear-gradient(
-      180deg,
-      rgba(255,255,255,.96),
-      rgba(255,255,255,.88)
-    );
-
-  border:1px solid var(--border);
-
-  border-radius:22px;
-
-  padding:42px;
-
-  margin-bottom:28px;
-
-  overflow:hidden;
-
-  backdrop-filter:blur(10px);
-
-  box-shadow:
-    0 2px 6px rgba(0,0,0,.015),
-    0 18px 45px rgba(0,0,0,.035);
-
-  transition:
-    transform .35s ease,
-    box-shadow .35s ease,
-    border-color .35s ease;
-
-}
-
-.section::before{
-
-  content:"";
-
-  position:absolute;
-
-  top:0;
-  left:0;
-
-  width:100%;
-  height:3px;
-
-  background:
-    linear-gradient(
-      to right,
-      var(--main),
-      var(--main-light)
-    );
-
-}
-
-.section:hover{
-
-  transform:translateY(-4px);
-
-  border-color:
-    rgba(0,143,82,.18);
-
-  box-shadow:
-    0 28px 55px rgba(0,0,0,.05);
-
-}
-
-/* =========================
-   Heading
-========================= */
-
-h2{
-
-  margin-top:0;
-  margin-bottom:24px;
-
-  color:var(--main);
-
-  font-size:1.32em;
-
-  font-weight:700;
-
-  line-height:1.7;
-
-  letter-spacing:.04em;
-
-}
-
-h3{
-
-  margin-top:32px;
-  margin-bottom:12px;
-
-  color:#4d4d4d;
-
-  font-size:1.04em;
-
-  font-weight:700;
-
-}
-
-/* =========================
-   Text
-========================= */
-
-p{
-  margin:0 0 14px;
-}
-
-ul{
-
-  margin:16px 0 22px;
-
-  padding-left:1.4em;
-
-}
-
-li{
-  margin-bottom:8px;
-}
-
-/* =========================
-   Strong
-========================= */
-
-strong{
-
-  color:var(--main);
-
-  font-weight:700;
-
-}
-
-/* =========================
-   Link
-========================= */
-
-a{
-
-  position:relative;
-
-  color:var(--main);
-
-  text-decoration:none;
-
-  transition:.25s ease;
-
-  font-weight:500;
-
-}
-
-a::after{
-
-  content:"";
-
-  position:absolute;
-
-  left:0;
-  bottom:-2px;
-
-  width:0;
-  height:1px;
-
-  background:var(--main);
-
-  transition:.25s ease;
-
-}
-
-a:hover::after{
-  width:100%;
-}
-
-/* =========================
-   Group
-========================= */
-
-.group{
-
-  margin-top:28px;
-
-  padding:26px;
-
-  border-radius:18px;
-
-  background:
-    linear-gradient(
-      to bottom right,
-      rgba(0,143,82,.025),
-      rgba(0,143,82,.01)
-    );
-
-  border:1px solid rgba(0,143,82,.06);
-
-}
-
-/* =========================
-   Accent Block
-========================= */
-
-.notice-box{
-
-  margin-top:18px;
-
-  padding:22px 24px;
-
-  border-radius:16px;
-
-  background:
-    linear-gradient(
-      to right,
-      rgba(0,143,82,.045),
-      rgba(0,143,82,.015)
-    );
-
-  border:1px solid rgba(0,143,82,.08);
-
-}
-
-/* =========================
-   Scroll Animation
-========================= */
-
-.section{
-  animation:fadeSection .7s ease;
-}
-
-@keyframes fadeSection{
-
-  from{
-    opacity:0;
-    transform:translateY(18px);
-  }
-
-  to{
-    opacity:1;
-    transform:translateY(0);
-  }
-
-}
-
-/* =========================
-   Mobile
-========================= */
-
-@media screen and (max-width:768px){
-
-  body{
-    font-size:14px;
-    line-height:1.85;
-  }
-
-  .hero{
-    min-height:300px;
-    padding:60px 18px;
-    background-position:center;
-  }
-
-  .hero-title{
-    font-size:2.2em;
-    line-height:1.5;
-  }
-
-  .hero-sub{
-    font-size:.74em;
-    letter-spacing:.22em;
-    margin-bottom:14px;
-  }
-
-  .hero-title::after{
-    margin-top:22px;
-    width:60px;
-  }
-
-  .hero-text{
-    margin-top:22px;
-    font-size:.94em;
-    line-height:1.95;
-  }
-
-  .container{
-    padding:42px 14px 60px;
-  }
-
-  .section-title{
-    font-size:1.38em;
-    margin:28px 0 18px;
-    letter-spacing:.1em;
-  }
-
-  .section-title::before,
-  .section-title::after{
-    width:42px;
-  }
-
-  .section-title::before{
-    margin-left:-92px;
-  }
-
-  .section-title::after{
-    margin-right:-92px;
-  }
-
-  .section{
-    padding:26px 18px;
-    border-radius:16px;
-    margin-bottom:22px;
-  }
-
-  h2{
-    font-size:1.14em;
-    margin-bottom:18px;
-    line-height:1.6;
-  }
-
-  h3{
-    margin-top:26px;
-    margin-bottom:10px;
-    font-size:1em;
-  }
-
-  p{
-    margin-bottom:12px;
-  }
-
-  ul{
-    margin:14px 0 18px;
-  }
-
-  li{
-    margin-bottom:7px;
-  }
-
-  .group{
-    padding:20px;
-    border-radius:16px;
-  }
-
-  .notice-box{
-    padding:18px;
-  }
-
-}
-
-/* =========================
-   Small Mobile
-========================= */
-
-@media screen and (max-width:430px){
-
-  .hero-title{
-    font-size:2em;
-  }
-
-  .hero-text{
-    font-size:.9em;
-  }
-
-  .section{
-    padding:24px 16px;
-  }
-
-  .section-title{
-    font-size:1.28em;
-    margin:22px 0 14px;
-  }
-
-}
-
-</style>
-
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>水素サロンheal｜お知らせ・サービス案内｜神楽坂の水素吸入サロン</title>
+  <meta name="theme-color" content="#008f52" />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&family=Zen+Old+Mincho:wght@500;700&display=swap"
+    rel="stylesheet"
+  />
+
+  <style>
+    /* ========================= Base ========================= */
+    :root {
+      --main: #008f52;
+      --main-light: #6ad3a6;
+      --text: #404040;
+      --bg: #f5f7f6;
+      --card: #ffffff;
+      --border: rgba(0, 143, 82, 0.08);
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      margin: 0;
+      background: radial-gradient(circle at top, #ffffff 0%, #f7f8f7 42%, #f2f4f3 100%);
+      color: var(--text);
+      font-family: 'Noto Sans JP', sans-serif;
+      line-height: 1.9;
+      letter-spacing: 0.04em;
+      font-size: 15px;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    /* ========================= Fade ========================= */
+    .fade {
+      animation: fadeIn 1s ease;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translateY(12px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================= Hero ========================= */
+    .hero {
+      position: relative;
+      width: 100%;
+      min-height: 440px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      padding: 80px 20px;
+      background:
+        linear-gradient(rgba(255, 255, 255, 0.72), rgba(255, 255, 255, 0.86)),
+        url("https://images.unsplash.com/photo-1506744038136-46273834b3fb?q=80&w=1600&auto=format&fit=crop")
+          center/cover no-repeat;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(circle at center, rgba(255, 255, 255, 0.10), transparent 70%);
+      animation: floatBg 12s ease-in-out infinite;
+    }
+
+    @keyframes floatBg {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.04);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
+    .hero-inner {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      max-width: 760px;
+    }
+
+    .hero-sub {
+      margin-bottom: 20px;
+      color: #008f52;
+      font-size: 0.88em;
+      letter-spacing: 0.35em;
+      font-weight: 500;
+    }
+
+    .hero-title {
+      margin: 0;
+      color: #008f52;
+      font-family: 'Zen Old Mincho', serif;
+      font-size: 4.2em;
+      font-weight: 700;
+      line-height: 1.35;
+      letter-spacing: 0.08em;
+    }
+
+    .hero-title::after {
+      content: "";
+      width: 78px;
+      height: 2px;
+      background: linear-gradient(to right, #008f52, #6ad3a6);
+      display: block;
+      margin: 28px auto 0;
+      border-radius: 999px;
+    }
+
+    .hero-text {
+      margin-top: 28px;
+      font-size: 1.03em;
+      color: #555;
+      line-height: 2.1;
+    }
+
+    /* ========================= Layout ========================= */
+    .container {
+      max-width: 980px;
+      margin: 0 auto;
+      padding: 36px 20px 90px;
+    }
+
+    /* ========================= Section Title ========================= */
+    .section-title {
+      position: relative;
+      text-align: center;
+      margin: 48px 0 26px;
+      color: var(--main);
+      font-size: 1.75em;
+      font-family: 'Zen Old Mincho', serif;
+      font-weight: 700;
+      letter-spacing: 0.14em;
+    }
+
+    .section-title::before,
+    .section-title::after {
+      content: "";
+      position: absolute;
+      top: 50%;
+      width: 80px;
+      height: 1px;
+      background: var(--main);
+      opacity: 0.16;
+    }
+
+    .section-title::before {
+      left: 50%;
+      margin-left: -170px;
+    }
+
+    .section-title::after {
+      right: 50%;
+      margin-right: -170px;
+    }
+
+    /* ========================= Card ========================= */
+    .section {
+      position: relative;
+      background: linear-gradient(
+        180deg,
+        rgba(255, 255, 255, 0.96),
+        rgba(255, 255, 255, 0.88)
+      );
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      padding: 42px;
+      margin-bottom: 28px;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+      box-shadow:
+        0 2px 6px rgba(0, 0, 0, 0.015),
+        0 18px 45px rgba(0, 0, 0, 0.035);
+      transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease,
+        border-color 0.35s ease;
+      animation: fadeSection 0.7s ease;
+    }
+
+    .section::before {
+      content: "";
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 3px;
+      background: linear-gradient(to right, var(--main), var(--main-light));
+    }
+
+    .section:hover {
+      transform: translateY(-4px);
+      border-color: rgba(0, 143, 82, 0.18);
+      box-shadow: 0 28px 55px rgba(0, 0, 0, 0.05);
+    }
+
+    /* ========================= Heading ========================= */
+    h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+      color: var(--main);
+      font-size: 1.32em;
+      font-weight: 700;
+      line-height: 1.7;
+      letter-spacing: 0.04em;
+    }
+
+    h3 {
+      margin-top: 32px;
+      margin-bottom: 12px;
+      color: #4d4d4d;
+      font-size: 1.04em;
+      font-weight: 700;
+    }
+
+    /* ========================= Text ========================= */
+    p {
+      margin: 0 0 14px;
+    }
+
+    ul {
+      margin: 16px 0 22px;
+      padding-left: 1.4em;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    /* ========================= Strong ========================= */
+    strong {
+      color: var(--main);
+      font-weight: 700;
+    }
+
+    /* ========================= Link ========================= */
+    a {
+      position: relative;
+      color: var(--main);
+      text-decoration: none;
+      transition: 0.25s ease;
+      font-weight: 500;
+    }
+
+    a::after {
+      content: "";
+      position: absolute;
+      left: 0;
+      bottom: -2px;
+      width: 0;
+      height: 1px;
+      background: var(--main);
+      transition: 0.25s ease;
+    }
+
+    a:hover::after {
+      width: 100%;
+    }
+
+    /* ========================= Group ========================= */
+    .group {
+      margin-top: 28px;
+      padding: 26px;
+      border-radius: 18px;
+      background: linear-gradient(
+        to bottom right,
+        rgba(0, 143, 82, 0.025),
+        rgba(0, 143, 82, 0.01)
+      );
+      border: 1px solid rgba(0, 143, 82, 0.06);
+    }
+
+    /* ========================= Accent Block ========================= */
+    .notice-box {
+      margin-top: 18px;
+      padding: 22px 24px;
+      border-radius: 16px;
+      background: linear-gradient(
+        to right,
+        rgba(0, 143, 82, 0.045),
+        rgba(0, 143, 82, 0.015)
+      );
+      border: 1px solid rgba(0, 143, 82, 0.08);
+    }
+
+    /* ========================= Scroll Animation ========================= */
+    @keyframes fadeSection {
+      from {
+        opacity: 0;
+        transform: translateY(18px);
+      }
+      to {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+
+    /* ========================= Mobile ========================= */
+    @media screen and (max-width: 768px) {
+      body {
+        font-size: 14px;
+        line-height: 1.85;
+      }
+
+      .hero {
+        min-height: 300px;
+        padding: 60px 18px;
+        background-position: center;
+      }
+
+      .hero-title {
+        font-size: 2.2em;
+        line-height: 1.5;
+      }
+
+      .hero-sub {
+        font-size: 0.74em;
+        letter-spacing: 0.22em;
+        margin-bottom: 14px;
+      }
+
+      .hero-title::after {
+        margin-top: 22px;
+        width: 60px;
+      }
+
+      .hero-text {
+        margin-top: 22px;
+        font-size: 0.94em;
+        line-height: 1.95;
+      }
+
+      .container {
+        padding: 42px 14px 60px;
+      }
+
+      .section-title {
+        font-size: 1.38em;
+        margin: 28px 0 18px;
+        letter-spacing: 0.1em;
+      }
+
+      .section-title::before,
+      .section-title::after {
+        width: 42px;
+      }
+
+      .section-title::before {
+        margin-left: -92px;
+      }
+
+      .section-title::after {
+        margin-right: -92px;
+      }
+
+      .section {
+        padding: 26px 18px;
+        border-radius: 16px;
+        margin-bottom: 22px;
+      }
+
+      h2 {
+        font-size: 1.14em;
+        margin-bottom: 18px;
+        line-height: 1.6;
+      }
+
+      h3 {
+        margin-top: 26px;
+        margin-bottom: 10px;
+        font-size: 1em;
+      }
+
+      p {
+        margin-bottom: 12px;
+      }
+
+      ul {
+        margin: 14px 0 18px;
+      }
+
+      li {
+        margin-bottom: 7px;
+      }
+
+      .group {
+        padding: 20px;
+        border-radius: 16px;
+      }
+
+      .notice-box {
+        padding: 18px;
+      }
+    }
+
+    /* ========================= Small Mobile ========================= */
+    @media screen and (max-width: 430px) {
+      .hero-title {
+        font-size: 2em;
+      }
+
+      .hero-text {
+        font-size: 0.9em;
+      }
+
+      .section {
+        padding: 24px 16px;
+      }
+
+      .section-title {
+        font-size: 1.28em;
+        margin: 22px 0 14px;
+      }
+    }
+  </style>
 </head>
 
 <body>
-
-<!-- Hero -->
-
-<section class="hero fade">
-
-  <div class="hero-inner">
-
-    <div class="hero-sub">
-      INFORMATION & SERVICE
+  <!-- Hero -->
+  <section class="hero fade">
+    <div class="hero-inner">
+      <div class="hero-sub">INFORMATION & SERVICE</div>
+      <h1 class="hero-title">水素サロンheal</h1>
+      <div class="hero-text">お知らせ・各種サービス・ご案内</div>
     </div>
+  </section>
 
-    <h1 class="hero-title">
-      水素サロンheal
-    </h1>
+  <div class="container">
+    <!-- お知らせ -->
+    <div class="section-title">お知らせ</div>
 
-    <div class="hero-text">
-      お知らせ・各種サービス・ご案内
-    </div>
-
-  </div>
-
-</section>
-
-<div class="container">
-
-  <!-- お知らせ -->
-
-  <div class="section-title">
-    お知らせ
-  </div>
-
-  <div class="section">
-
-    <h2>🎉オープン2周年のご挨拶🎉</h2>
-
-    <p>
-      いつもご利用いただき、誠にありがとうございます😊
-    </p>
-
-    <p>
-      皆さまのおかげで水素サロン healは、
-      5/15に無事にオープン2周年を迎えることができます✨
-    </p>
-
-    <p>
-      この一年、たくさんのお客様とのご縁に支えられ、
-      笑顔あふれる毎日を過ごすことができました🌿
-    </p>
-
-    <p>
-      日頃の感謝を込めて
-      「2周年イベント」を開催いたします💐
-    </p>
-
-    <p>
-      これからも、みなさまにとって
-      癒しと元気をお届けできるサロンであり続けられるよう、
-      スタッフ一同ますます頑張ってまいります💪💚
-    </p>
-
-    <p>
-      今後ともどうぞよろしくお願いいたします🍀
-    </p>
-
-    <p>
-      🫧水素サロン heal スタッフ一同🫧
-    </p>
-
-  </div>
-
-  <div class="section">
-
-    <h2>🌿2周年キャンペーンのお知らせ🌿</h2>
-
-    <p>
-      おかげさまで、レプトンサロンヒールは
-      5月15日に2周年を迎えます。<br>
-
-      日頃の感謝を込めて、
-      期間限定の記念キャンペーンを実施いたします。
-    </p>
-
-    <div class="notice-box">
-
+    <div class="section">
+      <h2>🎉オープン2周年のご挨拶🎉</h2>
+      <p>いつもご利用いただき、誠にありがとうございます😊</p>
+      <p>皆さまのおかげで水素サロン healは、5/15に無事にオープン2周年を迎えることができます✨</p>
+      <p>この一年、たくさんのお客様とのご縁に支えられ、笑顔あふれる毎日を過ごすことができました🌿</p>
+      <p>日頃の感謝を込めて「2周年イベント」を開催いたします💐</p>
       <p>
-        📅《期間》5月1日(金)～18日(月)<br>
+        これからも、みなさまにとって癒しと元気をお届けできるサロンであり続けられるよう、スタッフ一同ますます頑張ってまいります💪💚
+      </p>
+      <p>今後ともどうぞよろしくお願いいたします🍀</p>
+      <p>🫧水素サロン heal スタッフ一同🫧</p>
+    </div>
 
-        🎁《対象》
-        すべてのお客様
-        （期間中は何度でもご利用いただけます）
+    <div class="section">
+      <h2>🌿2周年キャンペーンのお知らせ🌿</h2>
+      <p>
+        おかげさまで、レプトンサロンヒールは5月15日に2周年を迎えます。<br />
+        日頃の感謝を込めて、期間限定の記念キャンペーンを実施いたします。
       </p>
 
+      <div class="notice-box">
+        <p>
+          📅《期間》5月1日(金)～18日(月)<br />
+          🎁《対象》すべてのお客様（期間中は何度でもご利用いただけます）
+        </p>
+      </div>
+
+      <p><strong>【20%OFFキャンペーン】</strong></p>
+
+      <p>
+        ①追加G60分<br />
+        通常¥6,400 → ¥5,120
+      </p>
+
+      <p>
+        ②レプトンガス＋ゴッドクリーナー60分<br />
+        特別価格 ¥5,500
+      </p>
+
+      <p>
+        ③Gを追加された方限定<br />
+        ラドンマットを無料でご利用いただけます
+      </p>
+
+      <p><strong>【ご利用にあたって】</strong></p>
+
+      <p>
+        ・期間中は混雑が予想されるため、事前のご予約をおすすめしております。<br />
+        ・当日は状況により、ご案内が難しい場合がございます。<br />
+        ・①は定額プランをご利用中の方のみ対象となります。<br />
+        ・②は定額プランとの併用はいたしかねます。<br />
+        ・キャンペーンは期間中、何度でもご利用いただけます。
+      </p>
+
+      <p>
+        これからも「ふっと帰ってこられる場所」として、
+        皆さまに心地よい時間をご提供できるよう努めてまいります。
+        皆さまのご来店を心よりお待ちしております。
+      </p>
+
+      <p>ご不明点などございましたら、お気軽にお問い合わせくださいませ。</p>
     </div>
 
-    <p>
-      <strong>【20%OFFキャンペーン】</strong>
-    </p>
+    <div class="section">
+      <h2>10P特典内容変更</h2>
+      <p>平素より当サロンをご愛顧いただき、誠にありがとうございます。</p>
+      <p>2026年4月より内容を一部変更させていただくこととなりました。</p>
+      <p>【新10P特典内容】</p>
+      <ul>
+        <li>10P:L30分無料追加</li>
+        <li>20P:G30分無料追加</li>
+        <li>30P:L&G60分無料追加</li>
+      </ul>
+      <p>※詳細は各種サービスのポイント特典の利用可能条件をご確認ください。</p>
+    </div>
 
-    <p>
-      ①追加G60分<br>
-      通常¥6,400 → ¥5,120
-    </p>
+    <div class="section-title">各種サービス</div>
 
-    <p>
-      ②レプトンガス＋ゴッドクリーナー60分<br>
-      特別価格 ¥5,500
-    </p>
+    <div class="section">
+      <h2>ポイント特典の利用可能条件</h2>
+      <p><strong>来店ポイントが10P,20P,30P</strong>貯まると、利用可能となる特典が御座います。</p>
+      <p>10P:L30分無料追加</p>
+      <p>20P:G30分無料追加</p>
+      <p>30P:L&G60分無料追加</p>
+      <p><strong>※30Pのみ単体利用が可能です</strong></p>
+      <p>
+        ※単品または施術の追加をされたお客様につきましては<strong>自動でポイント付与</strong>されます🎁
+      </p>
+      <p>※ポイント使用後は使用したポイント分は消失いたします。</p>
+    </div>
 
-    <p>
-      ③Gを追加された方限定<br>
-      ラドンマットを無料でご利用いただけます
-    </p>
+    <div class="section">
+      <h2>その他特典</h2>
 
-    <p>
-      <strong>【ご利用にあたって】</strong>
-    </p>
+      <div class="notice-box">
+        <p><strong>【紹介特典】</strong></p>
+        <p>
+          紹介者が一度でも来店した事があり、
+          紹介された方が来店された場合に適用可能となります。
+        </p>
+        <p>
+          ご紹介者・紹介された方の両方に
+          <strong>L30分無料</strong>
+        </p>
+      </div>
 
-    <p>
-      ・期間中は混雑が予想されるため、
-      事前のご予約をおすすめしております。<br>
+      <div class="notice-box">
+        <p><strong>【誕生月特典】</strong></p>
+        <p>
+          お誕生日月は
+          <strong>L30分が1回無料</strong>
+        </p>
+      </div>
 
-      ・当日は状況により、
-      ご案内が難しい場合がございます。<br>
+      <p>※いずれも特典のみでの使用はできかねます。</p>
+    </div>
 
-      ・①は定額プランをご利用中の方のみ対象となります。<br>
+    <div class="section">
+      <h2>New Scanについて</h2>
+      <p>NewScanは外部の講師をお招きして水素と同時並行して行う施術となります。</p>
+      <p>その為、単体での施術はできかねます。</p>
+      <p>
+        また、通常のキャンセルポリシーとは<strong>異なるキャンセルポリシー</strong>を設けております為、ご注意ください。
+      </p>
+      <p>以下、キャンセルポリシーとなります。</p>
+      <ul>
+        <li><strong>2日前まで：無料</strong></li>
+        <li><strong>前日キャンセル：施術料の50％</strong></li>
+        <li><strong>当日キャンセル：施術料の100％</strong></li>
+      </ul>
+      <p>【ご予約受付時間帯】</p>
+      <p>①10:00~　②11:30~</p>
+      <p>③13:30~　④15:00~</p>
+      <p>⑤16:30~　⑥18:00~</p>
+      <p>⑦19:30~</p>
+      <p>【開催日程】</p>
+      <p>5月：10日(日)　26日(火)</p>
+      <p>6月：20日(土)　30日(火)</p>
+      <p>7月：12日(日)（13:00～）　28日(火)</p>
+      <p>8月：25日(火)</p>
+      <p>9月：13日(日)　29日(火)</p>
+      <p>10月：11日(日)　27日(火)</p>
+      <p>11月：15日(日)　17日(火)</p>
+      <p>12月：19日(土)　22日(火)</p>
+      <p>※日程は予告無く変更となる場合がございます。</p>
+    </div>
 
-      ・②は定額プランとの併用はいたしかねます。<br>
+    <div class="section-title">注意事項</div>
 
-      ・キャンペーンは期間中、
-      何度でもご利用いただけます。
-    </p>
+    <div class="section">
+      <h2>🌀 カニューラの交換・破棄について</h2>
+      <p>カニューラはお客様専用ですが、衛生管理上以下のルールがございます。</p>
+      <ul>
+        <li>初回使用から<strong>3ヶ月経過</strong>で交換推奨</li>
+        <li><strong>4ヶ月経過で破棄・再購入</strong></li>
+      </ul>
+    </div>
 
-    <p>
-      これからも
-      「ふっと帰ってこられる場所」として、
-      皆さまに心地よい時間をご提供できるよう
-      努めてまいります。
+    <div class="section">
+      <h2>ホットペッパービューティーからの予約について</h2>
+      <p>
+        ホットペッパービューティーからご予約いただく際、他のお客様から公式LINEにて同時刻のご予約が入った場合、タイミングによってはご予約時間が重複してしまうことがございます。
+        その際、システムの都合上、<strong>LINEでのご予約が優先</strong>となり、ホットペッパービューティーからのご予約が確定していない場合がございます。
+        また、ホットペッパービューティーでは予約完了メールが自動送信されるため、お客様ご自身では予約が確定していないことに気づきにくいケースがございます。
+        このような行き違いを防ぐためにも、確実にご案内させていただく手段として、公式LINEからのご予約をおすすめしております。
+      </p>
+    </div>
 
-      皆さまのご来店を
-      心よりお待ちしております。
-    </p>
+    <div class="section">
+      <h2>❌ キャンセルポリシー</h2>
+      <p>
+        ご連絡はLINEまたはお電話にてお願いいたします📞<br />
+        👉 <a href="tel:0359468140">03-5946-8140</a>
+      </p>
 
-    <p>
-      ご不明点などございましたら、
-      お気軽にお問い合わせくださいませ。
-    </p>
+      <h3>⏰ 遅刻について</h3>
+      <p>30分以上の遅刻は無断キャンセル扱いとなる場合がございます。</p>
 
+      <h3>💸 キャンセル料金</h3>
+      <ul>
+        <li><strong>2時間前まで：無料</strong></li>
+        <li><strong>2時間前〜：50％</strong></li>
+        <li><strong>予約時間以降：100％</strong></li>
+      </ul>
+      <p>※NewScanは異なるキャンセルポリシーの為、各種サービス内のNewScanをご参照ください。</p>
+    </div>
+
+    <div class="section-title">吸い放題&マンスリー各種書類</div>
+
+    <div class="section">
+      <p>
+        本書は「吸い放題プラン」「吸い放題プラス」「吸い放題プレミア」を含む、各種吸い放題プラン共通のご利用規約兼同意書です。
+      </p>
+      <p>
+        なお、本書の内容と事前にご案内した個別の契約内容（書面・控え・電子データ等）に差異が生じた場合は、当該個別の契約内容を優先するものとします。
+      </p>
+      <p>
+        個別のプラン内容（利用時間・料金・特典等）につきましては、別途ご案内内容をご確認ください。
+      </p>
+
+      <h2>同意書</h2>
+      <div class="group">
+        <p>吸い放題：<a href="吸い放題各種 ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+        <p>マンスリー2：<a href="L&Gマンスリー2ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+        <p>マンスリー3：<a href="L&Gマンスリー3ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+        <p>マンスリー4：<a href="L&Gマンスリー4ご利用規約兼同意書.pdf" target="_blank">PDFを見る</a></p>
+      </div>
+
+      <h2>解約申請書</h2>
+      <p>
+        解約申請を行う場合は、以下のPDFをダウンロードのうえ、必要事項をご記入いただき当店へご提出ください。
+      </p>
+      <p>
+        なお、ダウンロードが難しい場合は、LINEでの送付または店頭にて用紙をお渡しすることも可能です。
+      </p>
+
+      <div class="group">
+        <p>吸い放題プラン：<a href="吸い放題プラン解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>吸い放題プラス：<a href="吸い放題プラス解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>吸い放題プレミア：<a href="吸い放題プレミア解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>記入例：<a href="吸い放題解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
+      </div>
+
+      <div class="group">
+        <p>マンスリー2：<a href="マンスリー2プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>マンスリー3：<a href="マンスリー3プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>マンスリー4：<a href="マンスリー4プラン 解約申請書.pdf" target="_blank">PDFを見る</a></p>
+        <p>記入例：<a href="マンスリープラン 解約申請書「記入例」.pdf" target="_blank">PDFを見る</a></p>
+      </div>
+    </div>
+
+    <div class="section-title">サロン情報</div>
+
+    <div class="section">
+      <h2>神楽坂本店</h2>
+      <p>アクセス：東京都 新宿区 天神町 17番地</p>
+      <p>神楽坂駅徒歩2分</p>
+      <p>営業時間：平日10:00~21:00</p>
+      <p>　　　　　土日祝10:00~19:00</p>
+      <p>　　　　　不定休</p>
+      <p>電話番号： <a href="tel:0359468140">03-5946-8140</a></p>
+    </div>
   </div>
-
-  <div class="section">
-
-    <h2>10P特典内容変更</h2>
-
-    <p>
-      平素より当サロンをご愛顧いただき、
-      誠にありがとうございます。
-    </p>
-
-    <p>
-      2026年4月より内容を
-      一部変更させていただくこととなりました。
-    </p>
-
-    <p>【新10P特典内容】</p>
-
-    <ul>
-      <li>10P:L30分無料追加</li>
-      <li>20P:G30分無料追加</li>
-      <li>30P:L&G60分無料追加</li>
-    </ul>
-
-    <p>
-      ※詳細は各種サービスの
-      ポイント特典の利用可能条件をご確認ください。
-    </p>
-
-  </div>
-
-  <div class="section-title">
-    各種サービス
-  </div>
-
-</div>
-
 </body>
 </html>
